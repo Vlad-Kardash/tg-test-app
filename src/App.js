@@ -3,12 +3,10 @@ import "./App.css";
 import { useTranslation } from "react-i18next";
 import URL_IMAGES from "./constants/urlImages";
 import ZODIAC from "./constants/zodiacNames";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 const tg = window.Telegram.WebApp;
 function App() {
   const { i18n } = useTranslation();
-
-  console.log(postId);
 
   useEffect(() => {
     tg.ready();

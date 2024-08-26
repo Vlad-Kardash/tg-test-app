@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 const AboutZodiac = () => {
   const params = useParams();
+  const { i18n } = useTranslation();
   const [postId, setPostId] = useState([]);
   // console.log(i18n.language);
   useEffect(() => {
@@ -16,10 +18,10 @@ const AboutZodiac = () => {
     };
     fetch("https://poker247tech.ru/get_horoscope/", requestOptions)
       .then((response) => response.json())
-      .then((data) => setPostId(data.zodiac));
+      .then((data) => setPostId(data.horoscope));
   }, [i18n.language]);
   console.log(postId);
-  return <div className={""}>{params.zodiac}</div>;
+  return <div className={""}>{postId}</div>;
 };
 
 export default AboutZodiac;
