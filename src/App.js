@@ -1,9 +1,10 @@
-
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import { useTranslation } from 'react-i18next';
 
 const tg =window.Telegram.WebApp
 function App() {
+  const { t } = useTranslation()
   const [postId, setPostId] = useState(null);
 
   useEffect(() => {
@@ -36,6 +37,7 @@ function App() {
   return (
     <div className="App">
     {postId}
+    <p>{t('language')}</p>
      <button onClick={onClose}>Закрыть</button>
     </div>
   );
