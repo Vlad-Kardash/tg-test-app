@@ -28,7 +28,13 @@ const AboutZodiac = () => {
   return (
     <div className={"horoscopText"}>
       {ZODIAC.includes(params.zodiac) ? postId : "Zodiac is not defined"}
-      <BackButton onClick={() => console.log("Hello, I am back button!")} />
+      <BackButton
+        onClick={() =>
+          showPopup({
+            message: "back button click",
+          })
+        }
+      />
     </div>
   );
 };
