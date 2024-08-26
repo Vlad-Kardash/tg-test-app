@@ -31,7 +31,7 @@ body {
 .itemText {
   padding: 10px;
   text-align: center;
-  color: black;
+  color: var(--tg-theme-text-color);
 }
 .button {
   padding: 10px 15px;
