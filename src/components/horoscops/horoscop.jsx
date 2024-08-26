@@ -2,15 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ZODIAC from "../../constants/zodiacNames";
-import { BackButton, useShowPopup } from "@vkruglikov/react-telegram-web-app";
+import { BackButton } from "@vkruglikov/react-telegram-web-app";
 
 const AboutZodiac = () => {
-  const showPopup = useShowPopup();
-
-  const handleClick = () =>
-    showPopup({
-      message: "Hello, I am popup",
-    });
   const params = useParams();
   const { i18n } = useTranslation();
   const [postId, setPostId] = useState([]);
@@ -34,7 +28,7 @@ const AboutZodiac = () => {
   return (
     <div className={"horoscopText"}>
       {ZODIAC.includes(params.zodiac) ? postId : "Zodiac is not defined"}
-      <BackButton text="SHOW POPUP" onClick={handleClick} />
+      <BackButton onClick={() => console.log("Hello, I am back button!")} />
     </div>
   );
 };
