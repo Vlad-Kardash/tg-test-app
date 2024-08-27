@@ -7,12 +7,12 @@ import { initBackButton } from "@telegram-apps/sdk";
 import { initSwipeBehavior } from "@telegram-apps/sdk";
 const AboutZodiac = () => {
   const [swipeBehavior] = initSwipeBehavior();
-  swipeBehavior.enableVerticalSwipe();
+  swipeBehavior.disableVerticalSwipe();
   swipeBehavior.on("swipe", () => navigate(-1));
   const navigate = useNavigate();
   const [backButton] = initBackButton();
   backButton.show();
-  backButton.on("click", () => navigate(-1));
+  backButton.on("click", () => navigate(-1), backButton.hide());
 
   const params = useParams();
   const { i18n } = useTranslation();
