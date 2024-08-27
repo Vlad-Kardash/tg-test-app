@@ -4,7 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ZODIAC from "../../constants/zodiacNames";
 import { initBackButton } from "@telegram-apps/sdk";
+import { initSwipeBehavior } from "@telegram-apps/sdk";
 const AboutZodiac = () => {
+  const [swipeBehavior] = initSwipeBehavior();
+  swipeBehavior.enableVerticalSwipe();
+  swipeBehavior.on("swipe", () => navigate(-1));
   const navigate = useNavigate();
   const [backButton] = initBackButton();
   backButton.show();
