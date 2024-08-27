@@ -5,12 +5,7 @@ import "./i18n";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AboutZodiac from "./components/horoscops/horoscop";
 import Header from "./components/header/headers";
-import { initBackButton } from "@telegram-apps/sdk";
-const [backButton] = initBackButton();
-backButton.show();
-backButton.on("click", () => {
-  console.log("BackButton clicked.");
-});
+
 const router = createBrowserRouter([
   {
     path: "/",
