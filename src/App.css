@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  max-width: 500px;
+  max-width: 450px;
   background: var(--tg-theme-bg-color);
   color: var(--tg-theme-text-color);
 }
@@ -13,21 +13,21 @@ body {
   justify-content: space-between;
 }
 .blockItem {
-  margin: 10px;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 .item {
   display: flex;
   justify-content: center;
-  margin: 20px;
+  margin: 10px;
   max-width: 100px;
   max-height: 100px;
   text-decoration: none;
 }
 .img {
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 80px;
+  max-height: 80px;
 }
 .itemText {
   padding: 10px;
