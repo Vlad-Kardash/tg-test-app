@@ -2,19 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ZODIAC from "../../constants/zodiacNames";
-import {
-  TelegramWebApp,
-  WebAppBackButton,
-} from "@kloktunov/react-telegram-webapp";
+import { initBackButton } from "@telegram-apps/sdk";
 
 const AboutZodiac = () => {
-  const [show, setShow] = useState(false);
-  const toggleBackButton = () => setShow(!show);
-
-  const onClick = () => {
-    console.log("Back button was clicked!");
-  };
-
+  const [backButton] = initBackButton();
+  backButton.show();
+  backButton.on("click", () => {
+    console.log("BackButton clicked.");
+  });
   const params = useParams();
   const { i18n } = useTranslation();
   const [postId, setPostId] = useState([]);
@@ -38,11 +33,6 @@ const AboutZodiac = () => {
   return (
     <div className={"horoscopText"}>
       {ZODIAC.includes(params.zodiac) ? postId : "Zodiac is not defined"}
-      <TelegramWebApp>
-        <button onClick={toggleBackButton}>Show/hide Back Button</button>
-
-        {show && <WebAppBackButton onClick={onClick} />}
-      </TelegramWebApp>
     </div>
   );
 };
