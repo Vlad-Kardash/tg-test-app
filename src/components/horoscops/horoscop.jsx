@@ -7,7 +7,7 @@ import { initBackButton } from "@telegram-apps/sdk";
 const AboutZodiac = () => {
   const [backButton] = initBackButton();
   backButton.show();
-  backButton.onClick("backButtonClicked", () => {
+  backButton.on("click", () => {
     console.log("BackButton clicked.");
   });
 
