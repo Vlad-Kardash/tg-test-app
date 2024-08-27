@@ -29,7 +29,7 @@ const AboutZodiac = () => {
       .then((response) => response.json())
       .then((data) => setPostId(data.horoscope));
   }, [i18n.language]);
-  console.log(postId);
+  // console.log(postId);
   return (
     <div className={"horoscopText"}>
       {ZODIAC.includes(params.zodiac) ? postId : "Zodiac is not defined"}
