@@ -2,21 +2,15 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ZODIAC from "../../constants/zodiacNames";
-// import { initBackButton } from "@telegram-apps/sdk";
+import { initBackButton } from "@telegram-apps/sdk";
 
 const AboutZodiac = () => {
-  // const [backButton] = initBackButton();
-  // backButton.show();
-  // backButton.on("click", () => {
-  //   console.log("BackButton clicked.");
-  // });
-  var BackButton = WebApp.BackButton;
-  BackButton.show();
-  BackButton.onClick(function () {
-    WebApp.showAlert("BackButton clicked");
-    BackButton.hide();
+  const [backButton] = initBackButton();
+  backButton.show();
+  backButton.on("click", () => {
+    console.log("BackButton clicked.");
   });
-  WebApp.onEvent("backButtonClicked", function () {});
+
   const params = useParams();
   const { i18n } = useTranslation();
   const [postId, setPostId] = useState([]);
