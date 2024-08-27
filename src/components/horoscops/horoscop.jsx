@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ZODIAC from "../../constants/zodiacNames";
 import { initBackButton } from "@telegram-apps/sdk";
