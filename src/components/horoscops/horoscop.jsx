@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ZODIAC from "../../constants/zodiacNames";
 import { initBackButton } from "@telegram-apps/sdk";
 const AboutZodiac = () => {
-  let history = useHistory();
+  const navigate = useNavigate();
   const [backButton] = initBackButton();
   backButton.show();
-  backButton.on("click", () => {
-    history.goBack();
-  });
+  backButton.on("click", () => navigate(-1));
   const params = useParams();
   const { i18n } = useTranslation();
   const [postId, setPostId] = useState([]);
