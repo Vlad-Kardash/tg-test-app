@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  max-width: 600px;
+  max-width: 500px;
   background: var(--tg-theme-bg-color);
   color: var(--tg-theme-text-color);
 }
@@ -13,6 +13,7 @@ body {
   justify-content: space-between;
 }
 .blockItem {
+  margin: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }

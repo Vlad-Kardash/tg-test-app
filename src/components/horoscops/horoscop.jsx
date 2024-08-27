@@ -4,10 +4,11 @@ import { useTranslation } from "react-i18next";
 import ZODIAC from "../../constants/zodiacNames";
 import { initBackButton } from "@telegram-apps/sdk";
 const AboutZodiac = () => {
+  let history = useHistory();
   const [backButton] = initBackButton();
   backButton.show();
   backButton.on("click", () => {
-    console.log("BackButton clicked.");
+    history.goBack();
   });
   const params = useParams();
   const { i18n } = useTranslation();
