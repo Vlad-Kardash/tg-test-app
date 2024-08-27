@@ -4,15 +4,13 @@ import backend from "i18next-http-backend";
 
 let tg = window.Telegram.WebApp;
 
-const lang = tg.initData.user.language_code;
-console.log(lang);
+// const lang = tg.initDataUnsafe.user.language_code;
 
-// console.log(tg.language_code);
 i18n
   .use(initReactI18next)
   .use(backend)
   .init({
-    lng: lang === "ru" ? "ru" : "en",
+    lng: initDataUnsafe?.user?.language_code === "ru" ? "ru" : "en",
     fallbackLng: "en",
 
     interpolation: {
