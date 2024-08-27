@@ -12,7 +12,7 @@ i18n
   .use(initReactI18next)
   .use(backend)
   .init({
-    lng: tg.initDataUnsafe.user.username === "ru" ? "ru" : "en",
+    lng: "en",
     fallbackLng: "en",
 
     interpolation: {
