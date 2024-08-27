@@ -41,5 +41,7 @@ body {
   outline: none;
   cursor: pointer;
 }
-/* .horoscopText {
-} */
+.horoscopText {
+  margin: 10px;
+  text-align: justify;
+}

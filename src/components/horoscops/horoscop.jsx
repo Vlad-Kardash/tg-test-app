@@ -2,15 +2,16 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ZODIAC from "../../constants/zodiacNames";
-import { initBackButton } from "@telegram-apps/sdk";
 
 const AboutZodiac = () => {
-  const [backButton] = initBackButton();
-  backButton.show();
-  backButton.on("click", () => {
-    console.log("BackButton clicked.");
+  const data = JSON.stringify({
+    eventType: "web_app_setup_back_button",
+    eventData: {
+      is_visible: true,
+    },
   });
 
+  window.parent.postMessage(data, "https://web.telegram.org");
   const params = useParams();
   const { i18n } = useTranslation();
   const [postId, setPostId] = useState([]);
