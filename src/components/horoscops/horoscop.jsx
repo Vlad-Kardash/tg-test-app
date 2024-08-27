@@ -9,6 +9,7 @@ const AboutZodiac = () => {
   const [backButton] = initBackButton();
   backButton.show();
   backButton.on("click", () => navigate(-1));
+  backButton.hide();
   const params = useParams();
   const { i18n } = useTranslation();
   const [postId, setPostId] = useState([]);
